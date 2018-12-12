@@ -1,7 +1,9 @@
 #!/bin/sh
 
-cd /usr/local/src/mysql-4.0.30/
-./configure --prefix=/usr/local/mysql --with-extra-charsets=complex
+cd /usr/local/src/mysql-4.0.27/
+patch ./mysys/my_thr_init.c /usr/local/src/my_thr_init.c.patch
+CC=/usr/bin/gcc34 CXX=/usr/bin/g++34 \
+  ./configure --prefix=/usr/local/mysql --with-extra-charsets=complex --with-named-thread-libs="-lpthread"
 mkdir /usr/local/mysql \
       /usr/local/mysql/include \
       /usr/local/mysql/include/mysqlmkdir \
