@@ -1,6 +1,6 @@
 FROM centos:6.6
 
-RUN yum update; yum install -y bison make gcc-c++ ncurses-devel
+RUN yum update; yum install -y bison make gcc-c++ ncurses-devel && rm -rf /var/cache/yum/* && yum clean all
 
 ADD mysql-4.0.30.tar.gz /usr/local/src
 COPY build.sh /tmp/build.sh
