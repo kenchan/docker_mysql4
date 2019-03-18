@@ -4,7 +4,7 @@ set -e
 if [ "$1" = 'mysqld_safe' ]; then
     chown -R mysql "$MYSQLDATA"
 
-    if [ -z "$(ls -A "$MYSQLDATA")" ]; then
+    if [ ! -d "$MYSQLDATA/mysql" ]; then
         echo "Initializing database..."
         mysql_install_db --user=mysql
 
