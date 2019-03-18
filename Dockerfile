@@ -9,7 +9,6 @@ RUN /tmp/build.sh
 
 ENV PATH /usr/local/mysql/bin:$PATH
 ENV MYSQLDATA /usr/local/mysql/var
-VOLUME /usr/local/mysql/var
 
 COPY my.cnf /etc/my.cnf
 RUN groupadd -r mysql && useradd -r -g mysql mysql

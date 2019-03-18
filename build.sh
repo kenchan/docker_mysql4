@@ -9,6 +9,7 @@ mkdir /usr/local/mysql \
       /usr/local/mysql/lib/mysql \
       /usr/local/mysql/share \
       /usr/local/mysql/man \
+      /usr/local/mysql/var \
       /usr/local/mysql/mysql-test
 # make && make test && make install
 make && make install
